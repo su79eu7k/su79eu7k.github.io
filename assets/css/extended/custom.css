@@ -1,0 +1,10 @@
+/* Code block rounded corners */
+.post-content pre {
+  border-radius: 12px;
+}
+
+/* Inline code rounded corners */
+.post-content code:not(pre code) {
+  border-radius: 6px;
+  padding: 2px 6px;
+}
