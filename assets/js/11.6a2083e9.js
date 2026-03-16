@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{409:function(t,e,n){"use strict";n.r(e);var s=n(47),o=Object(s.a)({},function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("ListByDate")],1)},[],!1,null,null,null);o.options.__file="README.md";e.default=o.exports}}]);
