@@ -203,6 +203,8 @@ code {
 .highlight pre,
 .post-content .highlight {
   background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .post-content pre {
