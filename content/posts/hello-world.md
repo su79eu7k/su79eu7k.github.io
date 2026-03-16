@@ -5,6 +5,7 @@ draft: false
 tags: ["Blog"]
 summary: "새로운 블로그의 첫 번째 포스트입니다."
 math: true
+mermaid: true
 ---
 
 ## Hello World
@@ -27,3 +28,14 @@ print(df.describe())
 정규분포의 확률밀도함수:
 
 $$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+
+### Mermaid 다이어그램 테스트
+
+```mermaid
+graph LR
+    A[데이터 수집] --> B[전처리]
+    B --> C[모델 학습]
+    C --> D{성능 평가}
+    D -->|충분| E[배포]
+    D -->|부족| B
+```
