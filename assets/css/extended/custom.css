@@ -1,15 +1,14 @@
 /* ============================================
-   Foundation — Quiet Sophistication Theme
-   Warm neutrals, editorial typography, calm depth
+   Foundation — Quiet & Simple
    ============================================ */
 
 /* --- Light Mode --- */
 :root {
   --theme: #F7F5F2;
-  --entry: #FFFFFF;
+  --entry: #F7F5F2;
   --primary: #2A2622;
   --secondary: #8A8279;
-  --tertiary: #EDE9E3;
+  --tertiary: #EDEAE5;
   --content: #3D3832;
   --border: #E3DED6;
   --code-block-bg: #1E1D1C;
@@ -18,33 +17,24 @@
   --gap: 28px;
   --content-gap: 24px;
 
-  /* Custom accent */
   --accent: #7C9A92;
   --accent-hover: #5F7E76;
-  --shadow-subtle: 0 1px 3px rgba(42, 38, 34, 0.04),
-                   0 4px 12px rgba(42, 38, 34, 0.03);
-  --shadow-elevated: 0 2px 8px rgba(42, 38, 34, 0.06),
-                     0 8px 24px rgba(42, 38, 34, 0.05);
 }
 
 /* --- Dark Mode --- */
 [data-theme="dark"] {
   --theme: #181716;
-  --entry: #222120;
+  --entry: #181716;
   --primary: #E6E1DA;
   --secondary: #9B958C;
-  --tertiary: #2C2A28;
+  --tertiary: #242220;
   --content: #D1CBC2;
-  --border: #333130;
+  --border: #2E2C2A;
   --code-block-bg: #121110;
   --code-bg: #2A2826;
 
   --accent: #8FB8AE;
   --accent-hover: #A8CCBF;
-  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.2),
-                   0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-elevated: 0 2px 8px rgba(0, 0, 0, 0.25),
-                     0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* ==================
@@ -58,9 +48,9 @@ body {
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Editorial serif for headings */
 .post-title,
 .first-entry .entry-title,
 h1, h2 {
@@ -93,7 +83,6 @@ h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   background: color-mix(in srgb, var(--theme) 85%, transparent);
-  border-bottom: 1px solid var(--border);
 }
 
 #menu a {
@@ -143,17 +132,11 @@ h3, h4, h5, h6 {
 
 .post-entry {
   border: none !important;
-  background: var(--entry);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  margin-bottom: 8px;
-  box-shadow: var(--shadow-subtle);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.post-entry:hover {
-  box-shadow: var(--shadow-elevated);
-  transform: translateY(-1px);
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0;
+  padding: 20px 0;
+  margin-bottom: 0;
+  background: transparent;
 }
 
 .entry-title {
@@ -216,12 +199,9 @@ code {
   font-feature-settings: "liga" 0;
 }
 
-/* Code blocks */
 .post-content pre {
   border-radius: 12px;
   padding: 1.2em 1.4em;
-  box-shadow: var(--shadow-elevated);
-  border: 1px solid var(--border);
   margin: 1.8em 0;
   overflow-x: auto;
 }
@@ -231,21 +211,17 @@ code {
   line-height: 1.65;
 }
 
-/* Inline code */
 .post-content code:not(pre code) {
   border-radius: 5px;
   padding: 2px 7px;
   background: var(--code-bg);
-  border: 1px solid var(--border);
   font-size: 0.85em;
 }
 
-/* Copy button */
 .copy-code {
   border-radius: 6px !important;
   font-family: "Pretendard Variable", sans-serif;
   font-size: 0.75rem;
-  letter-spacing: 0.03em;
 }
 
 /* ==================
@@ -253,17 +229,14 @@ code {
    ================== */
 
 .post-content blockquote {
-  border-left: 3px solid var(--accent);
-  background: var(--tertiary);
-  border-radius: 0 8px 8px 0;
-  padding: 1em 1.4em;
+  border-left: 2px solid var(--secondary);
+  padding: 0.2em 1.2em;
   margin: 1.5em 0;
 }
 
 .post-content blockquote p {
   margin-bottom: 0;
   color: var(--secondary);
-  font-style: italic;
 }
 
 /* ==================
@@ -271,10 +244,9 @@ code {
    ================== */
 
 .toc {
-  background: var(--tertiary);
+  background: transparent;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
-  padding: 1em 1.4em;
+  border: none;
 }
 
 .toc a {
@@ -291,19 +263,18 @@ code {
    ================== */
 
 .post-tags a {
-  background: var(--tertiary);
+  background: transparent;
   color: var(--secondary);
   border-radius: 6px;
   padding: 4px 12px;
   font-size: 0.82rem;
   font-weight: 500;
   border: 1px solid var(--border);
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .post-tags a:hover {
-  background: var(--accent);
-  color: var(--theme);
+  color: var(--accent);
   border-color: var(--accent);
 }
 
@@ -312,23 +283,8 @@ code {
    ================== */
 
 .footer {
-  border-top: 1px solid var(--border);
   color: var(--secondary);
   font-size: 0.82rem;
-  letter-spacing: 0.01em;
-}
-
-/* ==================
-   Pagination
-   ================== */
-
-.pagination a {
-  border-radius: 8px;
-  transition: background 0.2s ease;
-}
-
-.pagination a:hover {
-  background: var(--tertiary);
 }
 
 /* ==================
@@ -337,15 +293,8 @@ code {
 
 .top-link {
   border-radius: 50% !important;
-  box-shadow: var(--shadow-subtle);
-  border: 1px solid var(--border) !important;
-  background: var(--entry) !important;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.top-link:hover {
-  box-shadow: var(--shadow-elevated);
-  transform: translateY(-2px);
+  border: none !important;
+  background: var(--tertiary) !important;
 }
 
 /* ==================
@@ -365,18 +314,18 @@ code {
    ================== */
 
 #searchbox input {
-  background: var(--entry);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 12px 0;
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 #searchbox input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
   outline: none;
 }
 
@@ -404,7 +353,7 @@ code {
 
 .paginav {
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
   border-radius: 0;
   margin-top: 3rem;
 }
@@ -424,16 +373,4 @@ code {
 ::selection {
   background: color-mix(in srgb, var(--accent) 25%, transparent);
   color: var(--primary);
-}
-
-/* ==================
-   Smooth transitions
-   ================== */
-
-body {
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.nav, .footer, .post-entry, .toc, .top-link {
-  transition: background 0.3s ease, border-color 0.3s ease;
 }
