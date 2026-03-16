@@ -24,6 +24,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"
   onload="mermaid.initialize({
     startOnLoad: true,
-    theme: document.documentElement.dataset.theme === 'dark' ? 'dark' : 'default'
+    theme: document.documentElement.dataset.theme === 'dark' ? 'dark' : 'default',
+    flowchart: { useMaxWidth: false },
+    sequence: { useMaxWidth: false }
   });"></script>
 {{- end }}
