@@ -241,14 +241,36 @@ code {
 
 /* Mermaid diagrams */
 .mermaid-wrapper {
-  overflow-x: auto;
+  overflow: hidden;
   margin: 1.8em 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-height: 200px;
 }
 
 .mermaid-wrapper pre.mermaid {
   background: transparent !important;
   padding: 0;
   text-align: center;
+}
+
+.mermaid-reset {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--tertiary);
+  color: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mermaid-wrapper:hover .mermaid-reset {
+  opacity: 1;
 }
 
 /* ==================

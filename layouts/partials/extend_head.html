@@ -27,5 +27,46 @@
     theme: document.documentElement.dataset.theme === 'dark' ? 'dark' : 'default',
     flowchart: { useMaxWidth: false },
     sequence: { useMaxWidth: false }
+  });
+  mermaid.run().then(function() {
+    document.querySelectorAll('.mermaid-wrapper').forEach(function(wrapper) {
+      var svg = wrapper.querySelector('svg');
+      if (!svg) return;
+      var scale = 1, x = 0, y = 0, dragging = false, startX, startY;
+      svg.style.transformOrigin = '0 0';
+      svg.style.cursor = 'grab';
+      wrapper.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        var delta = e.deltaY > 0 ? 0.9 : 1.1;
+        var newScale = Math.min(Math.max(scale * delta, 0.3), 3);
+        var rect = wrapper.getBoundingClientRect();
+        var mx = e.clientX - rect.left, my = e.clientY - rect.top;
+        x = mx - (mx - x) * (newScale / scale);
+        y = my - (my - y) * (newScale / scale);
+        scale = newScale;
+        svg.style.transform = 'translate('+x+'px,'+y+'px) scale('+scale+')';
+      }, {passive: false});
+      wrapper.addEventListener('mousedown', function(e) {
+        dragging = true; startX = e.clientX - x; startY = e.clientY - y;
+        svg.style.cursor = 'grabbing';
+      });
+      window.addEventListener('mousemove', function(e) {
+        if (!dragging) return;
+        x = e.clientX - startX; y = e.clientY - startY;
+        svg.style.transform = 'translate('+x+'px,'+y+'px) scale('+scale+')';
+      });
+      window.addEventListener('mouseup', function() {
+        dragging = false; svg.style.cursor = 'grab';
+      });
+      var btn = document.createElement('button');
+      btn.textContent = 'Reset';
+      btn.className = 'mermaid-reset';
+      btn.onclick = function() {
+        scale = 1; x = 0; y = 0;
+        svg.style.transform = '';
+      };
+      wrapper.style.position = 'relative';
+      wrapper.appendChild(btn);
+    });
   });"></script>
 {{- end }}
