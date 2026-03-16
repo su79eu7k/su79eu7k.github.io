@@ -1,7 +1,7 @@
 baseURL: "https://su79eu7k.github.io/"
 languageCode: "ko"
 defaultContentLanguage: "ko"
-title: "Python for Process Innovation"
+title: "Foundation"
 theme: "PaperMod"
 paginate: 10
 
@@ -16,8 +16,8 @@ minify:
 
 params:
   env: production
-  title: "Python for Process Innovation"
-  description: "Python, Statistics, Automation, ML/AI"
+  title: "Foundation"
+  description: "Writing about things that matter to me"
   defaultTheme: auto
   ShowReadingTime: true
   ShowShareButtons: true
@@ -36,8 +36,8 @@ params:
   tocopen: false
 
   homeInfoParams:
-    Title: "Python for Process Innovation"
-    Content: "#Python #Statistics #Automation #ML #AI"
+    Title: "Foundation"
+    Content: "Writing about things that matter to me"
 
   socialIcons:
     - name: github
