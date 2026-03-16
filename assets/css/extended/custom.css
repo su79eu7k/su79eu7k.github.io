@@ -200,13 +200,14 @@ code {
 }
 
 .post-content .highlight:not(table) {
-  background: none !important;
-  border-radius: 0 !important;
+  background: var(--code-block-bg) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
   margin: 1.8em auto;
 }
 
 .post-content pre {
-  border-radius: 12px;
+  border-radius: 0;
   padding: 1.2em 1.4em;
   margin: 0;
   overflow-x: auto;
