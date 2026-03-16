@@ -239,6 +239,18 @@ code {
   font-size: 0.75rem;
 }
 
+/* Mermaid diagrams */
+.mermaid-wrapper {
+  overflow-x: auto;
+  margin: 1.8em 0;
+}
+
+.mermaid-wrapper pre.mermaid {
+  background: transparent !important;
+  padding: 0;
+  text-align: center;
+}
+
 /* ==================
    Blockquotes
    ================== */
