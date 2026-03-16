@@ -4,6 +4,7 @@ date: 2026-03-16
 draft: false
 tags: ["Blog"]
 summary: "새로운 블로그의 첫 번째 포스트입니다."
+math: true
 ---
 
 ## Hello World

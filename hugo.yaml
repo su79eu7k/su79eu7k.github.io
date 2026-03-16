@@ -53,7 +53,7 @@ params:
     Text: "Edit"
     appendFilePath: true
 
-  math: true
+  math: false
 
 markup:
   highlight:

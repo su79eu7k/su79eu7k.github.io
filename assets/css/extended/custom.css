@@ -11,7 +11,7 @@
   --tertiary: #EDEAE5;
   --content: #3D3832;
   --border: #E3DED6;
-  --code-block-bg: #282a36;
+  --code-block-bg: #282a36; /* must match hugo.yaml highlight style (dracula) */
   --code-bg: #EEEBE6;
   --radius: 10px;
   --gap: 28px;
@@ -30,7 +30,7 @@
   --tertiary: #242220;
   --content: #D1CBC2;
   --border: #2E2C2A;
-  --code-block-bg: #282a36;
+  --code-block-bg: #282a36; /* must match hugo.yaml highlight style (dracula) */
   --code-bg: #2A2826;
 
   --accent: #8FB8AE;
@@ -48,11 +48,10 @@ body {
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .post-title,
-.first-entry .entry-title,
+.first-entry h1,
 h1, h2 {
   font-family: "Newsreader", "Pretendard Variable", serif;
   font-weight: 600;
@@ -68,7 +67,6 @@ h3, h4, h5, h6 {
 .post-content {
   font-size: 1.05rem;
   line-height: 1.82;
-  color: var(--content);
 }
 
 .post-content p {
@@ -82,6 +80,12 @@ h3, h4, h5, h6 {
 .nav {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  background: rgba(247, 245, 242, 0.85);
+  background: color-mix(in srgb, var(--theme) 85%, transparent);
+}
+
+[data-theme="dark"] .nav {
+  background: rgba(24, 23, 22, 0.85);
   background: color-mix(in srgb, var(--theme) 85%, transparent);
 }
 
@@ -94,13 +98,13 @@ h3, h4, h5, h6 {
 }
 
 #menu a:hover {
-  color: var(--accent) !important;
+  color: var(--accent);
 }
 
 .logo a {
   font-family: "Newsreader", serif;
   font-weight: 700;
-  font-size: 1.35rem !important;
+  font-size: 1.35rem;
   letter-spacing: -0.03em;
 }
 
@@ -114,7 +118,7 @@ h3, h4, h5, h6 {
   min-height: auto;
 }
 
-.home-info .entry-title {
+.home-info h1 {
   font-size: 2.2rem;
   line-height: 1.2;
   margin-bottom: 0.3em;
@@ -178,9 +182,11 @@ h3, h4, h5, h6 {
 .post-content a {
   color: var(--accent);
   text-decoration: underline;
+  text-decoration-color: rgba(124, 154, 146, 0.35);
   text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
   text-underline-offset: 3px;
   text-decoration-thickness: 1.5px;
+  box-shadow: none;
   transition: text-decoration-color 0.2s ease, color 0.2s ease;
 }
 
@@ -210,7 +216,6 @@ code {
 .post-content pre,
 .post-content pre[style] {
   background: transparent !important;
-  background-color: transparent !important;
   border-radius: 0;
   padding: 1.2em 1.4em;
   margin: 0;
@@ -231,7 +236,6 @@ code {
 
 .copy-code {
   border-radius: 6px !important;
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 0.75rem;
 }
 
@@ -254,7 +258,8 @@ code {
    Table of Contents
    ================== */
 
-.toc {
+.toc,
+[data-theme="dark"] .toc {
   background: transparent;
   border-radius: var(--radius);
   border: none;
@@ -330,7 +335,6 @@ code {
   border-bottom: 1px solid var(--border);
   border-radius: 0;
   padding: 12px 0;
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 1rem;
   transition: border-color 0.2s ease;
 }
@@ -382,6 +386,7 @@ code {
    ================== */
 
 ::selection {
+  background: rgba(124, 154, 146, 0.25);
   background: color-mix(in srgb, var(--accent) 25%, transparent);
   color: var(--primary);
 }
