@@ -246,6 +246,7 @@ code {
   border: 1px solid var(--border);
   border-radius: 12px;
   min-height: 200px;
+  touch-action: none;
 }
 
 .mermaid-wrapper pre.mermaid {
@@ -271,6 +272,14 @@ code {
 
 .mermaid-wrapper:hover .mermaid-reset {
   opacity: 1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .mermaid-reset {
+    opacity: 0.85;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
 }
 
 /* ==================
