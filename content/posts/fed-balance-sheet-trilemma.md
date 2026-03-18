@@ -32,7 +32,7 @@ mermaid: true
 
 ```mermaid
 graph TD
-    A["⚖️ 세 가지 목표"]
+    A["⚖️ 세 가지 목표\n(동시 달성 불가능)"]
 
     G1["① 작은 대차대조표\n(Small Balance Sheet)"]
     G2["② 단기금리 안정\n(Low Rate Volatility)"]
@@ -42,26 +42,10 @@ graph TD
     A --> G2
     A --> G3
 
-    C1(["✅ 가능한 조합 A\n① + ③\n→ 금리 변동성 감수"])
-    C2(["✅ 가능한 조합 B\n① + ②\n→ 잦은 시장개입 허용"])
-    C3(["✅ 가능한 조합 C\n② + ③\n→ 대차대조표 확대 허용"])
-    X(["❌ 세 가지 동시 달성\n불가능"])
-
-    G1 --- C1
-    G3 --- C1
-    G1 --- C2
-    G2 --- C2
-    G2 --- C3
-    G3 --- C3
-
     classDef goal fill:#e1f5ff,stroke:#0066cc,stroke-width:2px
-    classDef possible fill:#d4edda,stroke:#28a745,stroke-width:2px
-    classDef impossible fill:#f8d7da,stroke:#dc3545,stroke-width:2px
     classDef header fill:#fff3cd,stroke:#ffc107,stroke-width:2px
 
     class G1,G2,G3 goal
-    class C1,C2,C3 possible
-    class X impossible
     class A header
 ```
 
