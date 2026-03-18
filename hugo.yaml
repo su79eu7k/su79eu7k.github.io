@@ -2,6 +2,7 @@ baseURL: "https://su79eu7k.github.io/"
 languageCode: "ko"
 defaultContentLanguage: "ko"
 title: "Foundation"
+timeZone: "Asia/Seoul"
 theme: "PaperMod"
 paginate: 10
 
