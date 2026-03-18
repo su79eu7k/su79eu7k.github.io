@@ -1,7 +1,7 @@
 ---
 title: "Yes, and… — AI 시대에도 프로그래밍을 배워야 하는가"
 date: 2026-03-19
-draft: true
+draft: false
 tags: ["Programming", "AI", "Career", "Software Engineering"]
 summary: "htmx 창시자 Carson Gross가 학생들에게 던지는 답: 프로그래밍을 배워라, 단 코드만 짜는 사람으로 남지는 마라."
 ---
